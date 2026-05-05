@@ -1,0 +1,1104 @@
+/* GodMainCode Admin Styles v2.0 */
+/* 后台管理界面自定义深色主题样式 */
+
+:root {
+    --admin-primary: #8b5cf6;
+    --admin-primary-light: #a78bfa;
+    --admin-primary-dark: #7c3aed;
+    --admin-secondary: #06b6d4;
+    --admin-accent: #f472b6;
+    --admin-background: #0a0a0f;
+    --admin-background-gradient: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 100%);
+    --admin-surface: #1a1a2e;
+    --admin-surface-light: #2d2d44;
+    --admin-surface-glass: rgba(30, 30, 46, 0.6);
+    --admin-text: #ffffff;
+    --admin-text-secondary: #a1a1aa;
+    --admin-text-muted: #71717a;
+    --admin-border: rgba(161, 161, 170, 0.2);
+    --admin-border-light: rgba(161, 161, 170, 0.3);
+    --admin-success: #10b981;
+    --admin-warning: #f59e0b;
+    --admin-error: #ef4444;
+    --admin-info: #3b82f6;
+    --admin-radius-sm: 6px;
+    --admin-radius-md: 10px;
+    --admin-radius-lg: 16px;
+    --admin-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --admin-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+    --admin-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+    --admin-shadow-glow: 0 0 30px rgba(139, 92, 246, 0.3);
+    --admin-transition-fast: 0.15s ease;
+    --admin-transition-normal: 0.3s ease;
+}
+
+@keyframes adminFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes adminSlideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes adminPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+@keyframes adminGlow {
+    0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.3); }
+    50% { box-shadow: 0 0 30px rgba(139, 92, 246, 0.5); }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body.wp-admin {
+    background: var(--admin-background-gradient);
+    background-attachment: fixed;
+    color: var(--admin-text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+body.wp-admin #wpcontent,
+body.wp-admin #wpfooter {
+    background: transparent;
+    color: var(--admin-text);
+    padding-left: 20px;
+}
+
+body.wp-admin #wpcontent {
+    padding-top: 20px;
+}
+
+/* 登录页面完整重设计 */
+.login {
+    background: var(--admin-background-gradient);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login h1 {
+    margin-bottom: 30px;
+}
+
+.login h1 a {
+    background-image: none !important;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--admin-primary), var(--admin-secondary)) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+    margin: 0 auto;
+    box-shadow: var(--admin-shadow-glow);
+}
+
+.login h1 a::before {
+    content: 'G';
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+}
+
+.login form {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-lg);
+    padding: 40px;
+    box-shadow: var(--admin-shadow-lg);
+    animation: adminFadeIn 0.5s ease;
+}
+
+.login form .input,
+.login form input[type="text"],
+.login form input[type="password"] {
+    background: var(--admin-surface-light) !important;
+    border: 2px solid var(--admin-border) !important;
+    color: var(--admin-text) !important;
+    border-radius: var(--admin-radius-md);
+    padding: 14px 16px;
+    font-size: 16px;
+    transition: all var(--admin-transition-fast);
+}
+
+.login form .input:focus,
+.login form input[type="text"]:focus,
+.login form input[type="password"]:focus {
+    border-color: var(--admin-primary) !important;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2) !important;
+    outline: none;
+}
+
+.login label {
+    color: var(--admin-text-secondary);
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.login .button-primary {
+    background: linear-gradient(135deg, var(--admin-primary), var(--admin-primary-dark)) !important;
+    border: none !important;
+    border-radius: var(--admin-radius-md) !important;
+    padding: 14px 30px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    color: white !important;
+    box-shadow: var(--admin-shadow-md), 0 0 20px rgba(139, 92, 246, 0.3) !important;
+    transition: all var(--admin-transition-normal);
+    width: 100%;
+    margin-top: 10px;
+}
+
+.login .button-primary:hover {
+    background: linear-gradient(135deg, var(--admin-primary-light), var(--admin-primary)) !important;
+    transform: translateY(-2px);
+    box-shadow: var(--admin-shadow-lg), 0 0 30px rgba(139, 92, 246, 0.5) !important;
+}
+
+.login .message {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-left: 4px solid var(--admin-success);
+    border-radius: var(--admin-radius-md);
+    padding: 16px 20px;
+    color: var(--admin-text);
+}
+
+.login .error {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-left: 4px solid var(--admin-error);
+    border-radius: var(--admin-radius-md);
+    padding: 16px 20px;
+    color: var(--admin-text);
+}
+
+.login #nav {
+    margin-top: 24px;
+    text-align: center;
+}
+
+.login #nav a,
+.login #backtoblog a {
+    color: var(--admin-text-secondary);
+    transition: color var(--admin-transition-fast);
+}
+
+.login #nav a:hover,
+.login #backtoblog a:hover {
+    color: var(--admin-primary-light);
+}
+
+/* 顶部管理员栏 */
+#wpadminbar {
+    background: var(--admin-surface) !important;
+    border-bottom: 1px solid var(--admin-border);
+    box-shadow: var(--admin-shadow-sm);
+}
+
+#wpadminbar * {
+    color: var(--admin-text-secondary) !important;
+}
+
+#wpadminbar a:hover {
+    color: var(--admin-primary) !important;
+}
+
+#wpadminbar #wp-admin-bar-top-secondary .ab-empty-item {
+    color: var(--admin-text-muted);
+}
+
+#wpadminbar .ab-top-menu > li > .ab-item {
+    border-radius: var(--admin-radius-sm);
+    margin: 4px;
+}
+
+#wpadminbar .ab-top-menu > li > .ab-item:hover {
+    background: var(--admin-surface-light) !important;
+}
+
+#wpadminbar #wp-admin-bar-my-account .display-name {
+    color: var(--admin-text);
+}
+
+#wpadminbar #wp-admin-bar-user-info .display-name {
+    color: var(--admin-text);
+}
+
+/* 左侧管理菜单 */
+#adminmenuback,
+#adminmenuwrap,
+#adminmenu {
+    background: var(--admin-surface) !important;
+    border-right: 1px solid var(--admin-border);
+}
+
+#adminmenuwrap {
+    padding-top: 20px;
+}
+
+#adminmenu a {
+    color: var(--admin-text-secondary);
+    border-radius: var(--admin-radius-md);
+    margin: 4px 12px;
+    padding: 12px 16px;
+    transition: all var(--admin-transition-fast);
+}
+
+#adminmenu a:hover,
+#adminmenu a:focus {
+    background: var(--admin-surface-light) !important;
+    color: var(--admin-text) !important;
+}
+
+#adminmenu .wp-has-current-submenu a,
+#adminmenu .current,
+#adminmenu .wp-submenu .wp-submenu-head,
+#adminmenu .opensub:hover {
+    background: linear-gradient(135deg, var(--admin-primary), var(--admin-primary-dark)) !important;
+    color: white !important;
+    border-radius: var(--admin-radius-md);
+}
+
+#adminmenu li.menu-top:hover {
+    background: var(--admin-surface-light);
+}
+
+#adminmenu li.wp-has-submenu.wp-not-current-submenu:hover::after {
+    border-right-color: var(--admin-surface-light);
+}
+
+/* 菜单图标 */
+#adminmenu .wp-menu-image::before {
+    color: var(--admin-text-muted);
+    transition: color var(--admin-transition-fast);
+}
+
+#adminmenu li:hover .wp-menu-image::before,
+#adminmenu li.current:hover .wp-menu-image::before,
+#adminmenu li.wp-has-current-submenu:hover .wp-menu-image::before {
+    color: white;
+}
+
+/* 子菜单 */
+#adminmenu .wp-submenu {
+    background: var(--admin-surface-light) !important;
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-md);
+    box-shadow: var(--admin-shadow-lg);
+    padding: 8px;
+    min-width: 200px;
+}
+
+#adminmenu .wp-submenu a {
+    color: var(--admin-text-secondary);
+    padding: 10px 14px;
+    border-radius: var(--admin-radius-sm);
+}
+
+#adminmenu .wp-submenu a:hover {
+    background: var(--admin-surface) !important;
+    color: var(--admin-primary);
+}
+
+/* 主内容区域 */
+#wpbody-content {
+    padding-bottom: 60px;
+    animation: adminFadeIn 0.4s ease;
+}
+
+/* 页面标题和头部 */
+.wrap {
+    margin: 20px 20px 20px 0;
+}
+
+.wrap .wp-heading-inline,
+.wrap h1,
+h1.wp-heading-inline {
+    color: var(--admin-text);
+    font-weight: 700;
+    font-size: 28px;
+    border-bottom: 2px solid var(--admin-border);
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+}
+
+.wrap h1 {
+    font-size: 28px;
+    color: var(--admin-text);
+}
+
+/* 标签导航 */
+h2.nav-tab-wrapper {
+    border-bottom: 2px solid var(--admin-border);
+    margin-bottom: 24px;
+}
+
+h2 .nav-tab {
+    color: var(--admin-text-secondary);
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    padding: 14px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all var(--admin-transition-fast);
+}
+
+h2 .nav-tab:hover {
+    color: var(--admin-primary);
+    background: transparent;
+}
+
+h2 .nav-tab.nav-tab-active {
+    color: var(--admin-primary);
+    border-bottom-color: var(--admin-primary);
+    background: transparent;
+}
+
+/* 面包屑 */
+.wrap .subsubsub {
+    color: var(--admin-text-secondary);
+    margin-bottom: 20px;
+}
+
+.wrap .subsubsub a {
+    color: var(--admin-text-secondary);
+    padding: 6px 12px;
+    border-radius: var(--admin-radius-sm);
+    transition: all var(--admin-transition-fast);
+}
+
+.wrap .subsubsub a:hover {
+    background: var(--admin-surface-light);
+    color: var(--admin-primary);
+}
+
+.wrap .subsubsub .current {
+    background: var(--admin-primary);
+    color: white;
+    border-radius: var(--admin-radius-sm);
+}
+
+/* 表格样式 */
+.wp-list-table {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--admin-shadow-sm);
+}
+
+.wp-list-table th {
+    background: var(--admin-surface-light);
+    color: var(--admin-text);
+    font-weight: 600;
+    border-bottom: 2px solid var(--admin-border);
+    padding: 18px 16px;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.wp-list-table td {
+    color: var(--admin-text-secondary);
+    border-bottom: 1px solid var(--admin-border);
+    padding: 16px;
+    font-size: 14px;
+}
+
+.wp-list-table tr:hover td {
+    background: var(--admin-surface-light);
+}
+
+.wp-list-table tr:last-child td {
+    border-bottom: none;
+}
+
+.wp-list-table a {
+    color: var(--admin-text);
+    font-weight: 500;
+    transition: color var(--admin-transition-fast);
+}
+
+.wp-list-table a:hover {
+    color: var(--admin-primary-light);
+}
+
+.wp-list-table .row-actions {
+    color: var(--admin-text-muted);
+}
+
+.wp-list-table .row-actions .delete:hover {
+    color: var(--admin-error);
+}
+
+/* 复选框样式 */
+.wp-list-table thead tr th:first-child,
+.wp-list-table tbody tr td:first-child {
+    width: 40px;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: var(--admin-surface-light);
+    border: 2px solid var(--admin-border);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all var(--admin-transition-fast);
+}
+
+input[type="checkbox"]:checked {
+    background: var(--admin-primary);
+    border-color: var(--admin-primary);
+}
+
+input[type="checkbox"]:checked::after {
+    content: '✓';
+    color: white;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 表单元素 */
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="date"],
+textarea,
+select {
+    background: var(--admin-surface-light) !important;
+    border: 2px solid var(--admin-border) !important;
+    color: var(--admin-text) !important;
+    border-radius: var(--admin-radius-md);
+    padding: 12px 16px;
+    font-size: 14px;
+    transition: all var(--admin-transition-fast);
+}
+
+input[type="text"]:focus,
+input[type="search"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="date"]:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--admin-primary) !important;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2) !important;
+    outline: none;
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+select option {
+    background: var(--admin-surface);
+    color: var(--admin-text);
+    padding: 10px;
+}
+
+/* 表单标签 */
+.form-table th {
+    color: var(--admin-text);
+    font-weight: 600;
+    padding: 20px 0;
+    vertical-align: top;
+}
+
+.form-table td {
+    color: var(--admin-text-secondary);
+    padding: 20px 0;
+}
+
+/* 按钮样式 */
+.button,
+.button-primary,
+.button-secondary,
+.button-danger,
+.button-hero {
+    border-radius: var(--admin-radius-md);
+    padding: 12px 24px;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all var(--admin-transition-normal);
+    border: none;
+    cursor: pointer;
+}
+
+.button-primary {
+    background: linear-gradient(135deg, var(--admin-primary), var(--admin-primary-dark));
+    color: white;
+    box-shadow: var(--admin-shadow-md), 0 0 20px rgba(139, 92, 246, 0.3);
+}
+
+.button-primary:hover {
+    background: linear-gradient(135deg, var(--admin-primary-light), var(--admin-primary));
+    transform: translateY(-2px);
+    box-shadow: var(--admin-shadow-lg), 0 0 30px rgba(139, 92, 246, 0.4);
+    color: white;
+}
+
+.button-secondary {
+    background: var(--admin-surface-light);
+    color: var(--admin-text);
+    border: 1px solid var(--admin-border);
+}
+
+.button-secondary:hover {
+    background: var(--admin-surface);
+    border-color: var(--admin-primary);
+    color: var(--admin-primary);
+}
+
+.button-danger {
+    background: var(--admin-error);
+    color: white;
+}
+
+.button-danger:hover {
+    background: #dc2626;
+    transform: translateY(-2px);
+}
+
+.button-hero {
+    background: linear-gradient(135deg, var(--admin-primary), var(--admin-secondary));
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+
+.button-hero:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--admin-shadow-glow);
+}
+
+/* Meta Box 样式 */
+.postbox {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-lg);
+    box-shadow: var(--admin-shadow-sm);
+}
+
+.postbox .hndle {
+    color: var(--admin-text);
+    font-weight: 600;
+    font-size: 16px;
+    border-bottom: 1px solid var(--admin-border);
+    padding: 18px 20px;
+    border-radius: var(--admin-radius-lg) var(--admin-radius-lg) 0 0;
+}
+
+.postbox .hndle:hover {
+    background: var(--admin-surface-light);
+}
+
+.postbox .inside {
+    padding: 20px;
+}
+
+/* 提示信息 */
+notice,
+.update-message,
+.updated,
+.update-nag,
+.error,
+.login .message {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-md);
+    padding: 18px 20px;
+    margin: 20px 0;
+    animation: adminFadeIn 0.3s ease;
+}
+
+.notice-success,
+.updated {
+    border-left: 4px solid var(--admin-success);
+    background: rgba(16, 185, 129, 0.1);
+}
+
+.notice-warning,
+.update-nag {
+    border-left: 4px solid var(--admin-warning);
+    background: rgba(245, 158, 11, 0.1);
+}
+
+.notice-error {
+    border-left: 4px solid var(--admin-error);
+    background: rgba(239, 68, 68, 0.1);
+}
+
+.notice-info {
+    border-left: 4px solid var(--admin-info);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+/* 编辑器样式 */
+.wp-editor-wrap {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-md);
+    overflow: hidden;
+}
+
+.wp-editor-tabs {
+    background: var(--admin-surface-light);
+    padding: 8px;
+}
+
+.wp-editor-tabs .wp-switch-editor {
+    background: var(--admin-surface-light);
+    color: var(--admin-text-secondary);
+    border-radius: var(--admin-radius-sm);
+    padding: 8px 16px;
+    margin: 0 4px;
+    border: none;
+    transition: all var(--admin-transition-fast);
+}
+
+.wp-editor-tabs .wp-switch-editor:hover {
+    background: var(--admin-surface);
+    color: var(--admin-text);
+}
+
+.wp-editor-tabs .switch-tmce.active,
+.wp-editor-tabs .switch-html.active {
+    background: var(--admin-primary);
+    color: white;
+}
+
+.tmce-active .switch-tmce,
+.active .switch-html {
+    background: var(--admin-primary);
+    color: white;
+}
+
+.quicktags-toolbar {
+    background: var(--admin-surface-light);
+    border-bottom: 1px solid var(--admin-border);
+    padding: 10px;
+}
+
+.wp-editor-container {
+    background: var(--admin-surface);
+    border: none;
+}
+
+#wp-content-editor-container {
+    background: var(--admin-surface);
+}
+
+#content {
+    background: var(--admin-surface) !important;
+    color: var(--admin-text) !important;
+    border: 1px solid var(--admin-border) !important;
+    border-radius: var(--admin-radius-md) !important;
+    padding: 16px !important;
+}
+
+/* 媒体上传 */
+.media-frame {
+    background: var(--admin-background);
+}
+
+.media-modal {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-lg);
+}
+
+.attachment-details {
+    background: var(--admin-surface);
+}
+
+/* 分类和标签 */
+.tagcloud {
+    background: var(--admin-surface-light);
+    border-radius: var(--admin-radius-md);
+    padding: 18px;
+}
+
+.tagcloud a {
+    color: var(--admin-text-secondary);
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-sm);
+    padding: 6px 12px;
+    margin: 4px;
+    display: inline-block;
+    transition: all var(--admin-transition-fast);
+}
+
+.tagcloud a:hover {
+    border-color: var(--admin-primary);
+    color: var(--admin-primary);
+    background: var(--admin-surface);
+}
+
+/* 分页 */
+.tablenav .tablenav-pages {
+    color: var(--admin-text-secondary);
+    font-size: 14px;
+}
+
+.tablenav .page-numbers {
+    background: var(--admin-surface-light);
+    border: 1px solid var(--admin-border);
+    color: var(--admin-text-secondary);
+    border-radius: var(--admin-radius-sm);
+    padding: 8px 14px;
+    margin: 0 2px;
+    transition: all var(--admin-transition-fast);
+}
+
+.tablenav .page-numbers:hover,
+.tablenav .page-numbers.current {
+    background: var(--admin-primary);
+    border-color: var(--admin-primary);
+    color: white;
+}
+
+/* 小工具 */
+.widgets-holder-wrap {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-lg);
+}
+
+.widget-title {
+    color: var(--admin-text);
+    font-weight: 600;
+    padding: 14px 16px;
+    background: var(--admin-surface-light);
+    border-radius: var(--admin-radius-md);
+}
+
+/* 工具栏 */
+#contextual-help-link-wrap,
+#show-settings-link {
+    background: var(--admin-surface-light);
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-md);
+    transition: all var(--admin-transition-fast);
+}
+
+#contextual-help-link-wrap:hover,
+#show-settings-link:hover {
+    background: var(--admin-surface);
+    border-color: var(--admin-primary);
+}
+
+/* 插件和主题页面 */
+.plugin-card {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-lg);
+    transition: all var(--admin-transition-normal);
+}
+
+.plugin-card:hover {
+    border-color: var(--admin-primary);
+    transform: translateY(-4px);
+    box-shadow: var(--admin-shadow-glow);
+}
+
+.theme-install-php .theme {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-lg);
+    transition: all var(--admin-transition-normal);
+}
+
+.theme-install-php .theme:hover {
+    border-color: var(--admin-primary);
+    transform: translateY(-4px);
+}
+
+/* Dashboard */
+#dashboard-widgets {
+    background: transparent;
+}
+
+#dashboard-widgets .postbox-container {
+    width: 100%;
+}
+
+#dashboard-widgets .postbox {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-lg);
+}
+
+#dashboard-widgets .inside {
+    padding: 20px;
+}
+
+.welcome-panel {
+    background: linear-gradient(135deg, var(--admin-surface) 0%, var(--admin-surface-light) 100%);
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-lg);
+    padding: 28px;
+}
+
+.welcome-panel h2 {
+    color: var(--admin-text);
+    font-size: 24px;
+}
+
+.welcome-panel a {
+    color: var(--admin-primary-light);
+}
+
+.welcome-panel .welcome-panel-content {
+    padding: 0;
+}
+
+.welcome-panel .welcome-panel-header {
+    background: linear-gradient(135deg, var(--admin-primary), var(--admin-secondary));
+    border-radius: var(--admin-radius-md);
+    padding: 24px;
+    margin: -20px -20px 24px -20px;
+}
+
+/* 响应式后台 */
+@media only screen and (max-width: 782px) {
+    body.wp-admin {
+        font-size: 14px;
+    }
+
+    #wpadminbar {
+        height: 46px;
+    }
+
+    .wrap {
+        margin: 15px 15px 15px 0;
+    }
+
+    .wp-list-table {
+        font-size: 13px;
+    }
+
+    .button {
+        padding: 10px 18px;
+        font-size: 13px;
+    }
+
+    .form-table th,
+    .form-table td {
+        display: block;
+        width: 100%;
+        padding: 12px 0;
+    }
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--admin-background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--admin-surface-light);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--admin-primary);
+}
+
+/* Customizer 样式 */
+.customize-panel-back,
+.customize-section-back,
+#customize-theme-controls .accordion-section {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-md);
+}
+
+#customize-theme-controls .accordion-section:hover {
+    border-color: var(--admin-primary);
+}
+
+#customize-theme-controls .accordion-section > .accordion-section-title:hover {
+    background: var(--admin-surface-light);
+}
+
+#customize-theme-controls .accordion-section-content {
+    background: var(--admin-surface-light);
+    border-radius: 0 0 var(--admin-radius-md) var(--admin-radius-md);
+}
+
+#customize-controls-preview-toggle {
+    background: var(--admin-surface);
+    border-bottom: 1px solid var(--admin-border);
+}
+
+#customize-controls .customize-control {
+    padding: 16px 0;
+}
+
+.customize-control label {
+    color: var(--admin-text);
+    font-weight: 500;
+}
+
+/* 评论管理 */
+.comments-box {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-lg);
+}
+
+.comments-box thead {
+    background: var(--admin-surface-light);
+}
+
+.comments-box th {
+    color: var(--admin-text);
+}
+
+.comments-box td {
+    color: var(--admin-text-secondary);
+}
+
+.comment-item {
+    background: var(--admin-surface-light);
+    border-radius: var(--admin-radius-md);
+    margin: 8px 0;
+    padding: 16px;
+}
+
+/* 用户管理 */
+.users-php #the-list tr:hover {
+    background: var(--admin-surface-light);
+}
+
+.users-php .role {
+    background: var(--admin-surface-light);
+    border-radius: var(--admin-radius-sm);
+    padding: 6px 12px;
+    font-size: 12px;
+}
+
+/* 设置页面 */
+.options-general-php .form-table th {
+    color: var(--admin-text);
+    font-weight: 600;
+    padding: 20px 0;
+}
+
+.options-general-php .form-table td {
+    color: var(--admin-text-secondary);
+}
+
+.options-general-php .form-table tr:last-child {
+    border-bottom: none;
+}
+
+/* 媒体库 */
+.media-upload-form {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: var(--admin-radius-lg);
+    padding: 24px;
+}
+
+.attachment-info {
+    background: var(--admin-surface-light);
+    border-radius: var(--admin-radius-md);
+    padding: 18px;
+}
+
+/* Misc */
+#favorite-actions {
+    background: var(--admin-surface);
+}
+
+#favorite-actions a:hover {
+    color: var(--admin-primary);
+}
+
+.network-admin-network-list {
+    background: var(--admin-surface);
+}
+
+/* 选择器增强 */
+select:focus {
+    outline: none;
+    border-color: var(--admin-primary) !important;
+}
+
+/* 加载动画 */
+.wp-loading-spinner {
+    border: 3px solid var(--admin-surface-light);
+    border-top-color: var(--admin-primary);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Tooltips */
+.tooltip {
+    background: var(--admin-surface-light);
+    color: var(--admin-text);
+    border-radius: var(--admin-radius-sm);
+    padding: 10px 14px;
+    font-size: 13px;
+}
+
+/* 链接管理 */
+#linkcategory-tabs {
+    background: var(--admin-surface-light);
+    border-bottom: 2px solid var(--admin-border);
+    padding: 0;
+}
+
+#linkcategory-tabs a {
+    color: var(--admin-text-secondary);
+    padding: 14px 24px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: all var(--admin-transition-fast);
+}
+
+#linkcategory-tabs a:hover,
+#linkcategory-tabs a.current {
+    color: var(--admin-primary);
+    border-bottom-color: var(--admin-primary);
+    background: transparent;
+}

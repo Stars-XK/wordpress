@@ -1,0 +1,26 @@
+-- Sample Posts Data
+SET NAMES utf8mb4;
+
+DELETE FROM wp_posts WHERE post_type = 'post' AND post_name LIKE 'sample-%';
+
+-- Post 1
+INSERT INTO wp_posts (post_author, post_date, post_date_gmt, post_content, post_title, post_excerpt, post_status, comment_status, ping_status, post_password, post_name, to_ping, pinged, post_modified, post_modified_gmt, post_content_filtered, post_parent, guid, menu_order, post_type, post_mime_type, comment_count) VALUES
+(1, NOW(), NOW(), '<p>JavaScript is one of the core technologies of modern web development. This article introduces the basics and practical tips of JavaScript.</p><h2>Variables and Data Types</h2><p>JavaScript has multiple data types including strings, numbers, booleans, objects, and arrays.</p><h2>Functions and Scope</h2><p>Functions are the basic building blocks in JavaScript. Understanding scope is crucial for writing quality code.</p>', 'JavaScript Guide: From Basics to Advanced', 'JavaScript is one of the core technologies of modern web development. This article introduces the basics and practical tips.', 'publish', 'open', 'closed', '', 'sample-javascript-guide', '', '', NOW(), NOW(), '', 0, 'https://godmaincode.com/sample-javascript-guide', 0, 'post', '', 0);
+
+-- Post 2
+INSERT INTO wp_posts (post_author, post_date, post_date_gmt, post_content, post_title, post_excerpt, post_status, comment_status, ping_status, post_password, post_name, to_ping, pinged, post_modified, post_modified_gmt, post_content_filtered, post_parent, guid, menu_order, post_type, post_mime_type, comment_count) VALUES
+(1, NOW(), NOW(), '<p>React is a JavaScript library developed by Facebook for building user interfaces. This article shares best practices for React development.</p><h2>Component Design Principles</h2><p>Good component design should follow the single responsibility principle.</p><h2>State Management</h2><p>Manage component state properly and avoid unnecessary state lifting.</p>', 'React Best Practices and Performance Optimization', 'React is a JavaScript library developed by Facebook. This article shares best practices for React development.', 'publish', 'open', 'closed', '', 'sample-react-best-practices', '', '', NOW(), NOW(), '', 0, 'https://godmaincode.com/sample-react-best-practices', 1, 'post', '', 0);
+
+-- Post 3
+INSERT INTO wp_posts (post_author, post_date, post_date_gmt, post_content, post_title, post_excerpt, post_status, comment_status, ping_status, post_password, post_name, to_ping, pinged, post_modified, post_modified_gmt, post_content_filtered, post_parent, guid, menu_order, post_type, post_mime_type, comment_count) VALUES
+(1, NOW(), NOW(), '<p>CSS Grid is a two-dimensional layout system introduced in CSS3, making it easy to create complex page layouts.</p><h2>Grid Container Properties</h2><p>display: grid, grid-template-columns and grid-template-rows are basic properties.</p><h2>Responsive Design</h2><p>Create responsive grid layouts with media queries.</p>', 'Complete Guide to CSS Grid Layout', 'CSS Grid is a two-dimensional layout system in CSS3. This article details how to use CSS Grid.', 'publish', 'open', 'closed', '', 'sample-css-grid-guide', '', '', NOW(), NOW(), '', 0, 'https://godmaincode.com/sample-css-grid-guide', 2, 'post', '', 0);
+
+-- Post 4
+INSERT INTO wp_posts (post_author, post_date, post_date_gmt, post_content, post_title, post_excerpt, post_status, comment_status, ping_status, post_password, post_name, to_ping, pinged, post_modified, post_modified_gmt, post_content_filtered, post_parent, guid, menu_order, post_type, post_mime_type, comment_count) VALUES
+(1, NOW(), NOW(), '<p>Node.js is a JavaScript runtime environment for developing server-side applications. This article introduces how to build RESTful APIs with Node.js.</p><h2>Express Framework</h2><p>Express is the most popular Node.js web framework for quickly building APIs.</p><h2>Authentication</h2><p>Implement JWT authentication to protect API endpoints.</p>', 'Building RESTful APIs with Node.js and Express', 'Node.js is a JavaScript runtime environment. This article shows how to build RESTful APIs with Node.js and Express.', 'publish', 'open', 'closed', '', 'sample-nodejs-api', '', '', NOW(), NOW(), '', 0, 'https://godmaincode.com/sample-nodejs-api', 3, 'post', '', 0);
+
+-- Post 5
+INSERT INTO wp_posts (post_author, post_date, post_date_gmt, post_content, post_title, post_excerpt, post_status, comment_status, ping_status, post_password, post_name, to_ping, pinged, post_modified, post_modified_gmt, post_content_filtered, post_parent, guid, menu_order, post_type, post_mime_type, comment_count) VALUES
+(1, NOW(), NOW(), '<p>Git is an essential version control system in modern software development. This article introduces basic Git commands and workflows.</p><h2>Basic Commands</h2><p>git init, git add, git commit are the most frequently used commands.</p><h2>Team Collaboration</h2><p>Collaborate with your team through Pull Requests and Code Reviews.</p>', 'Complete Guide to Git Version Control', 'Git is an essential version control system in modern software development. This article covers Git basics and best practices.', 'publish', 'open', 'closed', '', 'sample-git-guide', '', '', NOW(), NOW(), '', 0, 'https://godmaincode.com/sample-git-guide', 4, 'post', '', 0);
+
+SELECT 'Sample posts created successfully!' AS message;
