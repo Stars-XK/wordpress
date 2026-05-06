@@ -1,0 +1,266 @@
+:root {
+    --bg-color: #0f0f0f;
+    --bg-secondary: #1a1a1a;
+    --text-color: #f1f1f1;
+    --text-secondary: #9ca3af;
+    --text-muted: #6b7280;
+    --card-bg: rgba(30, 30, 30, 0.8);
+    --card-bg-hover: rgba(40, 40, 40, 0.95);
+    --nav-bg: rgba(15, 15, 15, 0.85);
+    --nav-bg-scrolled: rgba(15, 15, 15, 0.95);
+    --border-color: #374151;
+    --border-light: #2d2d2d;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.6);
+    --overlay-bg: rgba(0, 0, 0, 0.8);
+    --success-color: #34d399;
+    --warning-color: #fbbf24;
+    --error-color: #f87171;
+    --info-color: #60a5fa;
+}
+
+body.theme-mode-dark {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+.site-header {
+    background: var(--nav-bg);
+    backdrop-filter: blur(20px);
+}
+
+.site-header.header-scrolled {
+    background: var(--nav-bg-scrolled);
+    box-shadow: var(--shadow-sm);
+}
+
+.main-navigation {
+    border-bottom: 1px solid var(--border-light);
+}
+
+.site-title a,
+.site-description {
+    color: var(--text-color);
+}
+
+.primary-menu a {
+    color: var(--text-secondary);
+}
+
+.primary-menu a:hover,
+.primary-menu .current-menu-item a {
+    color: var(--primary-color);
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #4c1d95 0%, #0f172a 100%);
+    color: white;
+}
+
+.hero-title {
+    color: white;
+}
+
+.hero-description {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.stat-number {
+    color: white;
+}
+
+.stat-label {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+}
+
+.card:hover {
+    background: var(--card-bg-hover);
+}
+
+.article-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+}
+
+.article-title a {
+    color: var(--text-color);
+}
+
+.article-title a:hover {
+    color: var(--primary-color);
+}
+
+.article-excerpt {
+    color: var(--text-secondary);
+}
+
+.article-meta {
+    color: var(--text-muted);
+}
+
+.news-featured {
+    background: var(--card-bg);
+    border: 1px solid var(--border-light);
+}
+
+.news-featured-title a {
+    color: var(--text-color);
+}
+
+.news-featured-title a:hover {
+    color: var(--primary-color);
+}
+
+.news-featured-excerpt {
+    color: var(--text-secondary);
+}
+
+.news-item-title a {
+    color: var(--text-color);
+}
+
+.news-item-title a:hover {
+    color: var(--primary-color);
+}
+
+.news-item-date {
+    color: var(--text-muted);
+}
+
+.timeline-container {
+    background: var(--bg-secondary);
+}
+
+.timeline-year {
+    color: var(--text-secondary);
+}
+
+.timeline-content {
+    background: var(--card-bg);
+}
+
+.timeline-title a {
+    color: var(--text-color);
+}
+
+.timeline-title a:hover {
+    color: var(--primary-color);
+}
+
+.timeline-excerpt {
+    color: var(--text-secondary);
+}
+
+.site-footer {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border-light);
+}
+
+.footer-menu-list a {
+    color: var(--text-secondary);
+}
+
+.footer-menu-list a:hover {
+    color: var(--primary-color);
+}
+
+.social-links a {
+    color: var(--text-secondary);
+}
+
+.social-links a:hover {
+    color: var(--primary-color);
+}
+
+.copyright,
+.footer-credit {
+    color: var(--text-muted);
+}
+
+.footer-credit a {
+    color: var(--primary-color);
+}
+
+.search-overlay {
+    background: var(--overlay-bg);
+}
+
+.search-content {
+    background: var(--card-bg);
+}
+
+.search-field {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+.search-field:focus {
+    border-color: var(--primary-color);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+input,
+textarea,
+select {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+::selection {
+    background: var(--primary-color);
+    color: white;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
